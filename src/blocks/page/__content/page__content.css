@@ -1,0 +1,17 @@
+.page__content {
+  background-color: black;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+}
+
+.page__content {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.page__content_loaded {
+  opacity: 1;
+}

@@ -1,6 +1,6 @@
 import { createCard } from './card.js';
 import { openModal, closeModal, addPopupAnimation, setOverlayCloseListener } from './modal.js';
-import { enableValidation, setErrorState } from './validate.js';
+import { enableValidation, setErrorState, toggleButtonState } from './validate.js';
 import { getInitialCards, getUserInfo, updateProfileInfo, addNewCard, updateUserAvatar, deleteCardFromServer } from './api.js';
 import '../pages/index.css';
 
@@ -193,9 +193,12 @@ const init = () => {
   });
 
   setupPopup(elements.profile.imageContainer, elements.popups.avatar, () => {
-    elements.inputs.avatar.value = '';
-    setErrorState(elements.inputs.avatar, config.validation);
-  });
+    elements.forms.avatar.reset();
+    setErrorState(elements.inputs.avatar, config.validation); 
+    const inputs = [elements.inputs.avatar]; 
+    const button = elements.forms.avatar.querySelector(config.validation.submitButtonSelector); 
+    toggleButtonState(inputs, button, config.validation);
+  });  
 
   document.querySelectorAll('.popup__close').forEach(button => {
     button.addEventListener('click', () => closeModal(button.closest('.popup')));

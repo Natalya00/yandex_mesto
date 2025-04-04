@@ -19,3 +19,4 @@
 - **Webpack** — сборка проекта  
 - **БЭМ** — методология именования классов  
 
+[GitHub Pages](https://natalya00.github.io/yandex_mesto/)

@@ -93,6 +93,8 @@
           class="popup__input popup__input_type_url" 
           placeholder="Ссылка на картинку" 
           required 
+          pattern="https?://.+\..+"
+          title="Введите адрес сайта"
           aria-describedby="link-error"
         >
         <span id="link-error" class="popup__input-error"></span> 
@@ -118,6 +120,8 @@
           class="popup__input popup__input_type_avatar-url"
           placeholder="Ссылка на аватар"
           required
+          pattern="https?://.+\..+"
+          title="Введите адрес сайта"
           aria-describedby="avatar-error"
         >
         <span id="avatar-error" class="popup__input-error"></span>
